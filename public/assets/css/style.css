@@ -1,3 +1,8 @@
+body {
+  margin-bottom: 80px;
+  background-image: url("https://news.temple.edu/sites/news/files/styles/article_hero/public/20170213_newspaper_004_938x528_0.jpg?itok=YUD4Kp9u&c=ec04b0b386a8865d81daa22bcadb37d0");
+}
+
 .card {
     margin: 10px;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
