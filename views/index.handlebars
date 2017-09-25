@@ -1,0 +1,76 @@
+  <nav class="navbar navbar-expand-sm navbar-light bg-primary">
+            <div class="navbar-brand" >Mongo Scraper</div>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mr-auto">
+                  <li class="nav-item active">
+                    <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#">Saved Articles</a>
+                  </li>
+                    <form method="GET" action="/scrape" >
+	                   <button class="btn btn-danger my-2 my-sm-0 center-block" data-toggle="modal" data-target="#exampleModal" id="scrapeBtn" type="submit">Scrape New Article</button>
+                    </form>
+                  <!--<button class="btn btn-danger my-2 my-sm-0 center-block" id="scrapeBtn" type="submit">Scrape New Article</button>-->
+                </ul>
+            </div>
+        </nav>
+
+        <div class="header">
+        <img src="https://news.temple.edu/sites/news/files/styles/article_hero/public/20170213_newspaper_004_938x528_0.jpg?itok=YUD4Kp9u&c=ec04b0b386a8865d81daa22bcadb37d0" class="header-img" width="100%" height="400px" alt="Header image">      
+        </div>
+        <br>
+  {{#each articles}}
+      <div class="card">
+          <div class="card-header bg-primary">{{this.title}}<form method="POST" action="/" >
+	<button class="btn btn-success my-2 my-sm-0 " id="saveBtn" type="submit">Save Article</button>
+</form></div>
+        <div class="card-body">
+            <h4 class="card-text">{{this.text}}</h4>
+        </div>
+  	</div>
+  {{/each}}
+
+
+<div class="def" id="def">
+<!--
+<div class="card">
+    <h4 class="card-header bg-success">Featured</h4>
+    <div class="card-body">
+        <h4 class="card-title">Special title treatment</h4>
+        <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+        <a href="#" class="btn btn-primary">Go somewhere</a>
+    </div>
+</div>
+-->
+</div>
+<div>
+
+              
+            <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+              <div class="modal-dialog" role="document">
+                <div class="modal-content">
+
+                  <div class="modal-body">
+                    {{this.number}} Articles
+                  </div>
+                  <div class="modal-footer">
+                      <form method="GET" action="/" >
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Ok</button>
+                    </form>
+                  </div>
+                </div>
+              </div>
+            </div>
+        </div>
+<!--
+<form method="POST" action="/" class="button-size">
+	<textarea type="text" name="plan"></textarea>
+	<button type="submit">Save Plan!</button>
+</form>
+
+<button class="btn btn-success my-2 my-sm-0 " id="saveBtn" type="submit">Save this Article</button>-->
